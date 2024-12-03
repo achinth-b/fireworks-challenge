@@ -1,5 +1,5 @@
 {
   "filename": "License-3.jpeg",
-  "document_type": "DL",
-  "extracted_data": "{\"surname\": \"Doe\", \"given_names\": \"John B\", \"date_of_birth\": \"1961-08-17\", \"date_of_issue\": \"2023-10-03\", \"date_of_expiration\": \"2033-10-09\", \"dl_number\": \"J00000000\", \"state\": \"Nevada\", \"address\": \"1010 Oak Lane, 16052, Lillian\", \"sex\": \"M\"}"
+  "document_type": "passport",
+  "extracted_data": "{\"surname\": \"DUAN\", \"given_names\": \"YEN YUAN\", \"date_of_birth\": \"1946-06-10\", \"date_of_issue\": \"2006-11-17\", \"date_of_expiration\": \"2016-11-17\", \"passport_no\": \"P************\", \"nationality\": \"CHINA\", \"place_of_birth\": \"FUJIAN\", \"sex\": \"M\", \"authority\": \"CHINA\"}"
 }

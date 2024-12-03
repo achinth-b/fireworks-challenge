@@ -65,16 +65,53 @@ This Proof of Value (PoV) project showcases an end-to-end Identity Verification 
 - **Tradeoffs**:
   - **Development Overhead**: Building and maintaining a frontend adds to the development effort, which might be unnecessary for a basic PoV focused on backend capabilities.
 
-## Next Steps
+## Getting Started
 
-1. **Enhanced Data Validation**: Incorporate more sophisticated validation mechanisms, including cross-referencing with external databases and implementing machine learning-based anomaly detection.
-2. **Security Enhancements**: Implement robust security measures such as encryption, secure authentication, and authorization protocols.
-3. **Comprehensive Error Handling**: Develop a more extensive error handling framework to manage various failure scenarios gracefully.
-4. **Frontend Improvements**: Develop a more user-friendly and feature-rich frontend interface to improve user interaction and experience.
-5. **Performance Optimization**: Optimize API response times and system performance to handle larger volumes of documents efficiently.
-6. **Logging and Monitoring**: Integrate logging and monitoring tools to track system performance, user activities, and detect potential issues proactively.
-7. **Testing**: Conduct thorough unit, integration, and end-to-end testing to ensure system reliability and correctness before moving to production.
+### Frontend
+
+To start the frontend application, navigate to the `src/frontend` directory and run the following command:
+
+```
+npm run start
+```
+
+This will start the React development server and open the application in your default browser at `http://localhost:3000`.
+
+### Backend
+
+To start the backend server, navigate to the `src/backend` directory and run the following command:
+
+```
+npm run start
+```
+
+This will start the FastAPI server and make it accessible at `http://localhost:8000`.
+
+## Data Storage & Scalability
+
+The current implementation stores processed JSON data and uploaded images in local directories (`processed_data/` and `uploads/` respectively). For production environments, consider:
+
+- Migrating to cloud storage (e.g., Amazon S3) for better durability and access control
+- Implementing horizontal scaling with load balancing (e.g., Kubernetes)
+- Adding caching layers (Redis/Memcached) for frequently accessed data
+- Using message queues (RabbitMQ/SQS) for async processing of intensive tasks
+- Choosing horizontally scalable databases (Aurora/MongoDB Atlas)
+
+## Model & System Improvements
+
+### OCR Enhancement
+- Fine-tune models specifically for identity documents
+- Improve image preprocessing (noise reduction, contrast enhancement)
+- Implement data augmentation and transfer learning techniques
+
+### System Upgrades
+1. Strengthen data validation with external database cross-referencing
+2. Add robust security measures (encryption, auth protocols)
+3. Expand error handling capabilities
+4. Optimize API performance
+5. Integrate logging and monitoring
+6. Implement comprehensive testing suite
 
 ## Conclusion
 
-This PoV demonstrates a viable approach to building an Identity Verification system for KYC processes using Firework AI’s platform. By harnessing Firework AI’s classification and OCR capabilities, the solution efficiently extracts and validates critical information from identity documents. While the PoV establishes foundational functionality, further enhancements in security, validation, and user experience are essential for a production-ready system.
+This PoV demonstrates a viable Identity Verification system using Firework AI's platform for KYC processes. While the foundation is established with document classification and OCR capabilities, production deployment would require implementing the above improvements for security, scalability, and reliability.

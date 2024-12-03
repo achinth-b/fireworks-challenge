@@ -4,8 +4,9 @@ import axios from 'axios';
 const DocumentUpload = () => {
     const [file, setFile] = useState(null);
     const [documentType, setDocumentType] = useState('passport');
-    const [status, setStatus] = useState('');
-    const [error, setError] = useState('');
+    const [status, setStatus] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const handleFileChange = (e) => {
         if (e.target.files && e.target.files[0]) {
@@ -16,11 +17,13 @@ const DocumentUpload = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setStatus('');
-        setError('');
+        setStatus(null);
+        setError(null);
+        setLoading(true);
 
         if (!file) {
             setError('Please select a file to upload');
+            setLoading(false);
             return;
         }
 
@@ -54,6 +57,7 @@ const DocumentUpload = () => {
             }
             console.error('Upload error:', err);
         }
+        setLoading(false);
     };
 
     return (
@@ -82,7 +86,9 @@ const DocumentUpload = () => {
                     />
                 </div>
 
-                <button type="submit">Upload Document</button>
+                <button type="submit" disabled={loading}>
+                    {loading ? 'Uploading...' : 'Upload Document'}
+                </button>
             </form>
 
             {status && <p className="success">{status}</p>}
@@ -131,6 +137,11 @@ const DocumentUpload = () => {
 
                 .error {
                     color: red;
+                }
+
+                button:disabled {
+                    background-color: #ccc;
+                    cursor: not-allowed;
                 }
             `}</style>
         </div>
