@@ -1,0 +1,5 @@
+{
+  "filename": "passport-2.jpg",
+  "document_type": "passport",
+  "extracted_data": "{\"surname\": \"NOT AVAILABLE\", \"given_names\": \"NOT AVAILABLE\", \"date_of_birth\": \"NOT AVAILABLE\", \"date_of_issue\": \"NOT AVAILABLE\", \"date_of_expiration\": \"NOT AVAILABLE\", \"passport_no\": \"NOT AVAILABLE\", \"nationality\": \"NOT AVAILABLE\", \"place_of_birth\": \"NOT AVAILABLE\", \"sex\": \"M\", \"authority\": \"NOT AVAILABLE\"}"
+}

@@ -1,0 +1,5 @@
+{
+  "filename": "passport-1.jpeg",
+  "document_type": "passport",
+  "extracted_data": "{\"surname\": \"Wu\",\"given_names\": \"Yi Fan\",\"date_of_birth\": \"1992-03-26\",\"date_of_issue\": \"2018-12-20\",\"date_of_expiration\": \"2033-12-20\",\"passport_no\": \"G50850885\",\"nationality\": \"China PRC\",\"place_of_birth\": \"Sichuan,China\",\"sex\": \"M\",\"authority\": \"National Passport and Visa Center,USA\"}"
+}

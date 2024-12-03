@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/backend/uploads
+    environment:
+      - FIREWORK_API_KEY=your_firework_api_key
+      - FIREWORK_API_URL=https://api.fireworks.ai
+    depends_on:
+      - db
+
+  frontend:
+    image: node:14
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    command: sh -c "cd frontend && npm install && npm start"
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: kyc_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
